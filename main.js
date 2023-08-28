@@ -1,38 +1,38 @@
-//Variáveis
-let numero = 5;
-let diaDaSemana = "quarta";
-let diaDeHoje = `hoje é ${diaDaSemana}`;
-//Número, texto, booleano 'true, false', listas (array) '[]', objeto (json) '{}'
-//Não precisa declarar o tipo de variável, nem colocar aspas na chave do json
+//objetos
+/*console.log(objeto.nome);
 
-//Constante, sempre q estiver tudo em caixa alta, não muda o valor
-const NOVA_FUNCAO_DISPONIVEL = true;
+//classes
+class P {
+    constructor(nome) {
+        this.nome
+    }
+}*/
 
-//Tratamento de erro
-try {
-    NOVA_FUNCAO_DISPONIVEL = false;
-} catch (erro) {
-    console.error("erro: " + erro.message);
+//DOM
+//lidar com elementos html com javascript
+
+//Promessas
+//classe utilizada para requisições q n dependem do nosso lado, o retorno da requisição por padrão é promisse: em aguardo, resolvida, rejeitada, o cód segue adiante sem esperar a promessa ser resolvida
+//se resoolvida faz algo, se rejeitada trata o erro e tenta novamente
+const handleSubmit = () => {
+const nome = document.getElementsByName("nome")[0];
+const faltas = document.getElementsByName("faltas")[0];
+
+const tbody = document.getElementsByTagName("tbody")[0];
+tbody.appendChild(createTrWithGivenValues(nome.ariaValueMax, faltas.value));
+nome.value = "";
+faltas.value = "0";
 }
 
-//Função
-function saudacao(nome) {
-    return "Olá, " + nome + "!";
-}
+const createTrWithGivenValues = (nome, faltas) => {
+    const tr = document.createElement("tr");
+    const nomeTd = document.createElement("td");
+    const faltasTd = document.createElement("td");
+    tr.appendChild(nomeTd);
+    tr.appendChild(faltasTd);
 
-//Loop, no python len(lista) ele retorna o tamanho da lista a 1ª condição só roda na iniciação, dps só roda as outras duas, a última dps de executada volta pra 2ª pra verificar
-for (let i = 0; i < array.length; i++) {
-    console.log(array[1]);
-}
+    nomeTd.innerText = nome;
+    faltasTd.innerText = faltas;
 
-//Array forEach
-array.forEach(function(elemento) {
-    console.log(elemento);
-});
-
-//Loop while
-let contador = 0;
-while (contador < 3) {
-    console.log("Contador while: " + contador)
-    contador++;
+    return tr;
 }
