@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <link rel="stylesheet" href="/css/tabela.css">
 </head>
 <body>
-    <main>
+   <header>
     <h1>Exemplo DOM</h1>
+    </header>
+    <main>
         <section>
             <h2>Cadastrar Elementos em uma tabela</h2>
             <form action="javascript:;" onsubmit="handleSubmit()">
@@ -15,6 +19,8 @@
                 <input type="text" name="nome"/>
                 <label for="faltas">Faltas: </label>
                 <input type="number" name="faltas" value="0"/>
+
+                <button type="submit">Adicionar entrada</button>
             </form>
             <table>
                 <thead>
@@ -28,6 +34,6 @@
             </table>
         </section>
     </main>
-    <script type="text/javascript"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>
